@@ -4,7 +4,6 @@ export * from "./scrim";
 export * from "./sheet";
 export * from "./loading-spinner";
 
-export * from "./map";
 export * from "./date-selector";
 export * from "./date-range-input";
 export * from "./stepper-input";
