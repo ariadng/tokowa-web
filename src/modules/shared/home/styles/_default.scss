@@ -1,0 +1,172 @@
+.Desktop {
+	@apply hidden;
+}
+
+.HomePage {
+	@apply w-full h-full overflow-x-hidden overflow-y-auto;
+	@apply pb-20;
+
+	.MainPage {
+		@apply h-full opacity-100;
+		transform: translateX(0);
+		transition: var(--transition-default);
+
+		.Hero {
+			@apply w-full h-full flex flex-col gap-2;
+			@apply relative z-[1] bg-white;
+
+			.Main {
+				@apply relative w-full h-full;
+				@apply bg-slate-100 bg-cover overflow-hidden;
+
+				.Header {
+					@apply absolute top-6 left-6 z-[100];
+
+					img {
+						@apply h-8 w-auto;
+					}
+				}
+
+				.Text {
+					@apply px-4 pt-14 w-full h-full;
+					@apply flex flex-col justify-center gap-4;
+					@apply text-white;
+					@apply bg-black/30;
+
+					h1 {
+						@apply px-4;
+						@apply text-3xl font-bold;
+					}
+					
+					p {
+						@apply px-4;
+						@apply text-lg;
+					}
+
+				} // .Text
+
+				.Actions {
+					@apply p-4 text-stone-600;
+				}
+
+			} // .Main
+
+			.Secondary {
+				@apply flex flex-row gap-2;
+
+				.Type {
+					@apply w-full h-[120px] bg-cover;
+					@apply bg-slate-100 rounded-lg overflow-hidden;
+					@apply cursor-pointer;
+					transition: var(--transition-default);
+					
+					.Text {
+						@apply w-full h-full;
+						@apply p-4 flex flex-col items-center justify-center gap-2 text-center;
+						@apply bg-black/40 text-white;
+						transition: var(--transition-default);
+						
+						.Title {
+							@apply flex flex-col gap-2;
+							@apply text-xl font-semibold
+						}
+
+						.Description {
+							@apply hidden;
+						}
+					}
+
+					&:hover {
+						.Text {
+							@apply bg-black/30;
+						}
+					}
+
+					&:active {
+						@apply opacity-70;
+					}
+				} // Type
+
+			} // .Secondary
+
+		} // .Hero
+
+		.HeroBanner {
+			@apply mt-2;
+			@apply flex flex-col gap-2;
+			@apply relative z-[1] bg-white;
+
+			.Banner {
+				@apply h-[120px] bg-cover;
+				@apply bg-white rounded-lg overflow-hidden;
+				@apply border border-slate-200;
+				@apply cursor-pointer;
+				transition: var(--transition-default);
+				
+				.Text {
+					@apply ml-auto w-2/3 h-full;
+					@apply p-8 flex items-center justify-end text-right;
+					@apply text-xl font-medium leading-[1.1] text-white;
+					@apply bg-gradient-to-r from-transparent to-black/40;
+					transition: var(--transition-default);
+				}
+
+				&:hover {
+					.Text {
+						@apply bg-gradient-to-r from-transparent to-black/50;
+					}
+				}
+
+				&:active {
+					@apply opacity-70;
+				}
+			} // .Banner
+
+		} // .HeroBanner
+
+		.Recommendations {
+			@apply px-4;
+			@apply relative z-[1] bg-white;
+
+			.Header {
+				@apply py-8;
+			}
+
+			h2 {
+				@apply text-center;
+				@apply text-2xl font-semibold text-slate-800;
+			}
+		} // .Recommendations
+
+		.CallToAction {
+			@apply p-4;
+			@apply relative z-[1] bg-white;
+
+			.Button {
+				@apply w-full;
+			}
+		}
+	} // .MainPage
+
+	.ChildPage {
+		@apply fixed top-0 left-0 w-full h-full z-[6000];
+		@apply bg-white;
+		transform: translateX(100%);
+		transition: var(--transition-default);
+	} // .ChildPage
+
+	&.ChildActive {
+		@apply overflow-hidden;
+
+		.MainPage {
+			@apply opacity-40;
+			transform: translateX(-20%);
+		} // .MainPage
+
+		.ChildPage {
+			transform: translateX(0);
+		} // .ChildPage
+
+	} // &.ChildActive
+
+} // .HomePage

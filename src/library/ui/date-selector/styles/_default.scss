@@ -1,0 +1,145 @@
+.DateSelectorComponent {
+	@apply relative;
+	@apply w-[22rem] overflow-hidden;
+	@apply border border-slate-200 bg-white rounded-xl;
+	overscroll-behavior: none;
+
+	.DateViews {
+		@apply relative;
+		@apply w-full h-[25rem];
+		@apply touch-none;
+		overscroll-behavior: none;
+		will-change: transform;
+
+		.Weekdays {
+			@apply absolute top-12 left-0 z-[1000];
+			@apply w-full h-8 px-2;
+			@apply grid grid-cols-7;
+			@apply bg-white;
+			@apply border-b border-t border-slate-200;
+
+			.Cell {
+				@apply text-center text-slate-500 text-sm leading-8;
+			}
+
+		} // .Weekdays
+
+		.Navigation {
+			@apply absolute w-fit top-0 right-0 z-[1000];
+			@apply flex items-center justify-end;
+			@apply pl-8;
+			background: linear-gradient(90deg, transparent 0%, white 30%, white 100%);
+
+			button {
+				@apply w-10 h-12;
+				@apply flex items-center justify-center;
+				transition: var(--transition-default);
+
+				.Icon {
+					@apply text-slate-500;
+				}
+
+				&:active {
+					@apply opacity-60;
+					transition-duration: 0s;
+				}
+				
+				&[disabled] {
+					@apply opacity-20;
+				}
+
+			} // button
+
+		} // .Navigation
+
+		.DateViewList {
+			@apply relative;
+			@apply w-full h-full;
+			overscroll-behavior: none;
+			will-change: transform;
+
+			.DateViewContainer {
+				@apply absolute top-0 left-0;
+				@apply w-full h-full;
+			} // .DateViewContainer
+
+		} // .DateViewList
+
+	} // .DateViews
+
+	.DateView {
+		@apply w-full pb-4;
+		overscroll-behavior: none;
+		will-change: transform;
+
+		.Header {
+			@apply h-12 px-4 flex items-center;
+			@apply text-lg font-bold text-slate-700;
+		} // .Header
+
+		.Dates {
+			@apply mt-10 px-2;
+			@apply grid grid-cols-7;
+
+			.Cell {
+				@apply relative py-2 px-2;
+				@apply text-center text-slate-800 font-semibold;
+
+				&.DifferentMonth {
+					@apply opacity-50;
+					@apply cursor-auto;
+					@apply text-slate-500;
+				} // &.DifferentMonth
+
+				&.OutOfRange {
+					@apply opacity-50;
+					@apply cursor-auto;
+					@apply text-slate-500;
+				} // &.OutOfRange
+				
+				&.Disabled {
+					@apply opacity-50;
+					@apply cursor-auto;
+					@apply text-slate-500;
+
+					&::after {
+						content: "";
+						@apply absolute top-[calc(50%-1px)] left-[calc(50%-0.75rem)];
+						@apply w-6 h-[2px];
+						@apply bg-slate-500;
+					}
+
+				} // &.Disabled
+
+				&.Today {
+					@apply text-sky-500 font-semibold;
+				} // &.Today
+
+				&.Selected {
+					@apply text-white;
+					background-color: var(--color-primary);
+
+					&::after {
+						@apply bg-white;
+					}
+				} // &.Selected
+
+				&.SelectedFirst {
+					@apply rounded-tl-md rounded-bl-md;
+				} // &.SelectedFirst
+
+				&.SelectedLast {
+					@apply rounded-tr-md rounded-br-md;
+				} // &.SelectedLast
+
+				&.Highlighted {
+					@apply bg-rose-100;
+				} // &.Highlighted
+
+			} // .Cell
+
+		} // .Dates
+
+	} // .DateView
+
+} // .DateSelectorComponent

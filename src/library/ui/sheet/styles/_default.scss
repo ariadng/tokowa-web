@@ -1,0 +1,65 @@
+@use "src/styles/mixins/scrollbar";
+
+.SheetContainer {
+	@apply absolute top-0 left-0 z-[9500];
+	@apply w-[100svw] h-[100svh] overflow-hidden;
+	@apply flex flex-col justify-end items-center;
+	@apply pointer-events-none;
+	@apply opacity-100;
+	transition: opacity 300ms var(--transition-easing);
+	
+	.Sheet {
+		@apply pointer-events-auto;
+		transform: translateY(100svh);
+		will-change: transform;
+		transform-origin: bottom center;
+	} // .Sheet
+	
+	&.Active {
+		@apply opacity-100;
+		
+		.Sheet {
+			transform: translateY(0px);
+		}
+	}
+
+	&.Inactive {
+		@apply w-[0] h-[0] top-[100svh] opacity-100;
+	
+		.Sheet {
+			transform: translateY(100svh);
+		}
+	}
+
+
+} // .SheetContainer
+
+.Sheet {
+	@apply w-full h-fit;
+	@apply rounded-tl-[1.25rem] rounded-tr-[1.25rem];
+	box-shadow: 0 0 3rem rgba(0, 0, 0, 0.25);
+	
+	.Top {
+		@apply h-10;
+		@apply flex items-center justify-center;
+		@apply bg-white rounded-tl-[1.25rem] rounded-tr-[1.25rem];
+
+		.Notch {
+			@apply w-14 h-1;
+			@apply rounded-full bg-slate-200;
+		} // .Notch
+	} // .Top
+
+	.Header {
+		@apply hidden;
+	}
+
+	.Content {
+		@apply h-fit max-h-[calc(100svh-5rem)];
+		@apply bg-white;
+		@apply overflow-x-hidden overflow-y-auto;
+		@include scrollbar.primary;
+		box-shadow: 0 -2px 0 #ffffff;
+	} // .Content
+
+} // .Sheet

@@ -1,0 +1,75 @@
+.DateRangeInputContainer {
+	@apply relative w-full;
+}
+
+.DateRangeInput {
+	@apply relative h-[3.5rem] flex items-stretch;
+	@apply bg-white rounded-md;
+	box-shadow: inset 0 0 0 1px rgb(226 232 240);
+
+	.Separator {
+		@apply relative h-full w-[1px] z-[200];
+		@apply bg-slate-200;
+
+		.Icon {
+			@apply p-1;
+			@apply absolute top-[calc(50%-1.1rem)] left-[calc(50%-1.1rem)];
+			@apply text-slate-400;
+			@apply bg-white border-[1px] border-slate-200;
+			@apply rounded-full;
+		}
+
+		&.Active .Icon {
+			box-shadow: inset 0 0 0 1px var(--color-primary);
+			border-color: var(--color-primary);
+			color: var(--color-primary);
+		}
+	} // ↑ .Separator
+
+	.DateInput {
+		@apply pl-4 pt-3 pr-4;
+		@apply basis-0 grow shrink;
+		@apply flex flex-col gap-1;
+		@apply cursor-pointer;
+		transition: var(--transition-default);
+
+		&:first-child {
+			@apply pr-5;
+			@apply rounded-l-md;
+		}
+		
+		&:last-child {
+			@apply pl-5;
+			@apply rounded-r-md;
+		}
+
+		.Label {
+			@apply text-[0.825rem] leading-[1] font-medium text-slate-500;
+		}
+
+		.Value {
+			@apply leading-[1] text-slate-800 text-sm font-medium;
+		}
+
+		&:active {
+			@apply opacity-60;
+		}
+
+		&.Active {
+			box-shadow: inset 0 0 0 2px var(--color-primary);
+
+			.Label {
+				color: var(--color-primary);
+			}
+		}
+
+	} // ↑ .DateInput
+
+	
+
+} // ↑ .DateRangeInput
+
+.DateSelector {
+	@apply z-[4000];
+	@apply drop-shadow-md;
+} // ↑ .DateSelector

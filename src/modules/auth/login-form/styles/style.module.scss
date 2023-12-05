@@ -1,0 +1,14 @@
+@import "~/styles/breakpoints";
+
+// [ Default & Mobile Styling ]
+@import "./default";
+
+// [ Taablet Styling ]
+@media screen and (min-width: $viewport_tablet) {
+	@import "./tablet";
+} // ↑ Taablet Styling
+
+// [ Desktop Styling ]
+@media screen and (min-width: $viewport_desktop) {
+	@import "./desktop";
+} // ↑ Desktop Styling

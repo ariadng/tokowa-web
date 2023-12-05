@@ -1,0 +1,16 @@
+.HomePage {
+	@apply pb-0;
+
+	.MainPage .Hero .Main .Text {
+		@apply px-20 pt-32 pb-20 items-start;
+
+		h1 {
+			@apply text-[4rem] leading-[1] tracking-[-1px];
+		}
+
+		p {
+			@apply w-[70%] mt-5;
+			@apply text-[2rem] leading-[1.2] text-white/70;
+		}
+	}
+} // .HomePage

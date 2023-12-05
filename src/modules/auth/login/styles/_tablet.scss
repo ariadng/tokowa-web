@@ -1,0 +1,11 @@
+.LoginPage {
+
+	.Actions {
+		@apply flex-row;
+
+		> * {
+			@apply w-auto;
+		}
+	} // .Actions
+
+} // .LoginPage

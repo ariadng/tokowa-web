@@ -1,0 +1,9 @@
+.AppLayout {
+	@apply w-full h-full;
+	@apply bg-white;
+
+	.AppContent {
+		@apply w-full h-full overflow-hidden;
+	} // .AppContent
+	
+} // .AppLayout

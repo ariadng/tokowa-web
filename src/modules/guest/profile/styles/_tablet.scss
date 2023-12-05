@@ -1,0 +1,10 @@
+.GuestProfilePage {
+	@apply flex items-center justify-center;
+	@apply bg-stone-100;
+
+	.MainPage {
+		@apply max-w-[500px] w-full h-fit p-6;
+		@apply bg-white rounded-xl overflow-hidden drop-shadow-md;
+	} // .MainPage
+
+} // .GuestProfilePage

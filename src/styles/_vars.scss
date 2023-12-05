@@ -1,0 +1,16 @@
+:root {
+
+	// Dimensions
+	--navbar-height: 4rem;
+	--spacing: 1rem;
+
+	// Colors
+	--color-primary: #0ea5e9;
+	--color-primary-lighter: #39b2ea;
+	--color-primary-100: #e0f2fe;
+
+	// Transitions
+	--transition-easing: cubic-bezier(.14, .63, .33, .9);
+	--transition-default: all 0.3s var(--transition-easing);
+
+}

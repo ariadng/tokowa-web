@@ -1,0 +1,69 @@
+.Stepper {
+	@apply h-12;
+	@apply flex items-center gap-1;
+
+	.Value {
+		@apply min-w-[4rem] w-fit h-8;
+		@apply flex items-center gap-1;
+		@apply rounded-full select-none;
+		@apply bg-slate-100;
+		@apply text-center;
+
+		input {
+			@apply w-16 h-full rounded-full;
+			@apply text-slate-700 font-medium text-center; 
+			@apply bg-transparent;
+			transition: all var(--transition);
+
+			&:focus {
+				outline: none;
+				box-shadow: inset 0 0 0 2px var(--color-primary);
+			}
+		}
+
+	} // ↑ .Value
+
+	.StepperButton {
+		@apply w-8 h-8;
+		@apply flex items-center justify-center;
+		@apply rounded-full cursor-pointer;
+		@apply bg-white border-2 border-slate-100;
+		transition: all var(--transition);
+
+		.Icon {
+			@apply text-xl text-slate-600;
+		} // ↑ .Icon
+
+		&:active {
+			@apply bg-slate-300 border-slate-300;
+			transition-duration: 0s;
+		} // ↑ pressed state
+
+		&:disabled {
+			@apply cursor-auto bg-white/50;
+
+			.Icon {
+				@apply text-slate-200;
+			}
+
+			&:hover, &:active {
+				@apply bg-white/50;
+			}
+
+		} // ↑ pressed state
+
+	} // ↑ .StepperButton
+
+} // ↑ .Stepper
+
+// Hover states
+@media screen and (hover: hover) {
+	.Stepper {
+		.StepperButton {
+			&:hover:not(:active) {
+				@apply bg-slate-100;
+			}
+		}
+	}
+}
+// ↑ hover state

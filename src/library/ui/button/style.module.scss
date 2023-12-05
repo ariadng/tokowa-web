@@ -1,0 +1,125 @@
+.Button {
+
+	--padding: 0 2rem;
+	--border-radius: 0.5rem;
+	--height: 3.5rem;
+
+	@apply shrink-0 flex items-center justify-center gap-4;
+
+	--bg-color: rgb(245 245 244);
+	--hover-bg-color: rgb(231 229 228);
+
+	background-color: var(--bg-color) !important;
+	height: var(--height);
+	padding: var(--padding);
+	border-radius: var(--border-radius);
+	transition: var(--transition-default);
+
+	.Label {
+		@apply font-semibold text-center whitespace-nowrap;
+		@apply text-stone-600;
+	}
+
+	.Icon {
+		@apply pointer-events-none;
+	}
+
+	&:active {
+		@apply opacity-60;
+		transition-duration: 0s;
+	}
+
+	// Width Property
+	&._width_full {
+		@apply grow w-full;
+	}
+
+	// Size Property
+	// Small
+	&._size_small {
+		--padding: 0 calc(var(--spacing) * 1);
+		--height: 2.5rem;
+	}
+
+	// Color Default
+	&._color_default {
+		--bg-color: rgb(245 245 244);
+		--hover-bg-color: rgb(231 229 228);
+	}
+
+	// Color Light
+	&._color_light {
+		--bg-color: white;
+		--hover-bg-color: rgb(245 245 244);
+	}
+
+	// Color Light (Outlined)
+	&._color_light-outlined {
+		--bg-color: white;
+		--hover-bg-color: rgb(245 245 244);
+		box-shadow: inset 0 0 1px rgb(148 163 184);
+	}
+
+	// Color Ghost
+	&._color_ghost {
+		--bg-color: transparent;
+		--hover-bg-color: transparent;
+	}
+
+	// Color Property
+	&._color_primary {
+		--bg-color: var(--color-primary);
+		--hover-bg-color: var(--color-primary-lighter);
+		color: #ffffff;
+		
+		.Label {
+			color: #ffffff;
+		}
+	}
+
+	&._color_primary-inverse {
+		--bg-color: white;
+		--hover-bg-color: var(--color-on-primary-darker);
+		color: var(--color-primary);
+		
+		.Label {
+			color: var(--color-primary);
+		}
+	}
+
+	&._color_dark {
+		--bg-color: rgb(41 37 36);
+		--hover-bg-color: rgb(62, 56, 55);
+		color: rgb(245 245 244);
+
+		.Label {
+			color: rgb(245 245 244);
+		}
+	}
+
+	// Icon Only
+	&._icon_only {
+		@apply aspect-square;
+		padding: 0;
+	}
+
+	// Disabled
+	&.Disabled {
+		@apply opacity-50 cursor-not-allowed;
+		background-color: rgb(235, 239, 243) !important;
+		color: rgb(171, 184, 199) !important;
+
+		.Label {
+			color: rgb(71 85 105) !important;
+		}
+	}
+}
+
+// Hover Styling
+@media (hover: hover) {
+
+	.Button:hover {
+		background-color: var(--hover-bg-color) !important;
+	}
+
+}

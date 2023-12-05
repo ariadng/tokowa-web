@@ -1,0 +1,122 @@
+.GuestProfilePage {
+	@apply relative w-full h-full;
+
+	.MainPage {
+		@apply px-6 pt-6 pb-32;
+		@apply opacity-100;
+		transform: translateX(0);
+		transition: var(--transition-default);
+
+		.PageHeader {
+			@apply pt-4 pb-6;
+			@apply flex items-center justify-between gap-6;
+
+			.PageTitle {
+				@apply font-bold text-3xl text-stone-600;
+			} // .PageTitle
+
+		} // .PageHeader
+
+		.UserBadge {
+			@apply flex items-center gap-4;
+
+			.Photo {
+				@apply w-16 h-16 overflow-hidden;
+				@apply rounded-full bg-stone-200;
+
+				img {
+					@apply w-full h-full object-cover;
+				}
+			} // .Photo
+
+			.Details {
+				@apply flex flex-col;
+
+				.Name {
+					@apply text-lg font-semibold text-stone-600;
+				}
+
+				.Info {
+					@apply text-sm text-stone-500 font-medium;
+				}
+			} // .Details
+		} // .UserBadge
+
+		.MenuList {
+			@apply mt-10;
+			@apply flex flex-col gap-12;
+
+			.MenuSection {
+				@apply flex flex-col gap-3;
+
+				.SectionTitle {
+					@apply text-xl font-semibold text-stone-600;
+				} // .SectionTitle
+
+				.Menu {
+					@apply flex flex-col;
+
+					.MenuItem {
+						@apply w-full py-3 flex items-center gap-3;
+						@apply border-b border-stone-200;
+						transition: var(--transition-default);
+
+						&:active {
+							@apply opacity-60;
+							transition-duration: 0s;
+						}
+
+						.Icon {
+							@apply text-3xl text-stone-500;
+						}
+
+						.Label {
+							@apply font-medium text-stone-500;
+						}
+
+						.Arrow {
+							@apply ml-auto text-stone-400;
+						}
+
+						.Value {
+							@apply ml-auto text-stone-400 font-medium;
+						}
+					} // .MenuItem
+				} // .Menu
+
+			} // .MenuSection
+
+		} // .MenuList
+
+		.MainActions {
+			@apply mt-6;
+		} // .MainActions
+
+		.SecondaryActions {
+			@apply mt-10;
+		} // .MainActions
+
+	} // .MainPage
+
+	.ChildPage {
+		@apply fixed top-0 left-0 w-full h-full z-[6000];
+		@apply bg-white;
+		transform: translateX(100%);
+		transition: var(--transition-default);
+	} // .ChildPage
+
+	&.ChildActive {
+		@apply overflow-hidden;
+
+		.MainPage {
+			@apply opacity-40;
+			transform: translateX(-20%);
+		} // .MainPage
+
+		.ChildPage {
+			transform: translateX(0);
+		} // .ChildPage
+
+	} // &.ChildActive
+
+} // .GuestProfilePage

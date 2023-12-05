@@ -1,0 +1,25 @@
+.LoginPage {
+	@apply flex-row pb-0;
+
+	.Cover {
+		@apply max-h-full h-full w-2/3;
+	} // .Cover
+
+	.Text {
+		@apply w-1/3 h-full py-8 px-8;
+
+		.Form {
+			@apply mt-12 flex flex-col gap-2;
+		} // .Form
+
+		p {
+			@apply my-6;
+		}
+
+	} // .Text
+
+	.Actions {
+		@apply hidden;
+	} // .Actions
+
+} // .LoginPage

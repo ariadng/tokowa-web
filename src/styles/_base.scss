@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+// Disable tap highlight on mobile devices
+* {
+	-webkit-tap-highlight-color: transparent;
+}
+
+body {
+	@apply w-[100svw] h-[100svh];
+	@apply overflow-hidden;
+	overscroll-behavior-y: contain;
+
+	@apply text-stone-700;
+	font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+#root {
+	@apply w-full h-full;
+}

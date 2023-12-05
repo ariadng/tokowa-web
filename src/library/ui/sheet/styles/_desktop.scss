@@ -1,0 +1,27 @@
+.SheetContainer {
+	@apply justify-center;
+
+	
+
+} // .SheetContainer
+
+.Sheet {
+	@apply w-fit min-w-[400px];
+	@apply rounded-xl overflow-hidden;
+	@apply bg-white;
+
+	.Top {
+		@apply hidden;
+	} // .Top
+
+	.Header {
+		@apply pl-4 py-2 pr-2;
+		@apply flex items-center justify-between;
+		box-shadow: inset 0 -3px 0 rgba(226, 232, 240, 0.75);
+
+		.Title {
+			@apply text-slate-700 font-semibold text-lg;
+		}
+	} // .Header
+
+} // .Sheet

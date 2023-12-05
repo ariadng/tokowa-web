@@ -1,0 +1,40 @@
+.ToggleOptions {
+	@apply flex items-stretch;
+
+	button {
+		@apply grow shrink;
+		@apply py-3;
+		@apply border-2 border-slate-200;
+		@apply text-sm font-medium text-slate-600;
+		transition: var(--transition-default);
+
+		&:not(:last-child) {
+			@apply border-r-0;
+		}
+
+		&:first-child {
+			@apply rounded-tl-lg rounded-bl-lg;
+		}
+
+		&:last-child {
+			@apply rounded-tr-lg rounded-br-lg;
+		}
+
+		&:active {
+			@apply opacity-60;
+			transition-duration: 0s;
+		}
+
+		&.Selected {
+			color: var(--color-primary);
+			border-color: var(--color-primary);
+			z-index: 200;
+
+			&:not(:last-child) {
+				box-shadow: 2px 0 0 0 var(--color-primary);
+			}
+		} // &.Selected
+
+	} // button
+
+} // .ToggleOptions

@@ -1,0 +1,29 @@
+.TextField {
+	@apply flex flex-col;
+
+	&:not(:first-child) {
+		@apply mt-6;
+	}
+
+	label {
+		@apply font-semibold text-stone-600;
+	}
+
+	.Description {
+		@apply mt-1;
+		@apply text-sm text-stone-500;
+	}
+
+	input {
+		@apply w-full h-12;
+		@apply border-b border-stone-300 outline-none;
+		transition: var(--transition-default);
+
+		&:focus {
+			@apply outline-none;
+			@apply border-stone-600;
+			box-shadow: inset 0 -1px 0 rgb(87 83 78);
+		}
+	} // input
+
+} // .TextField

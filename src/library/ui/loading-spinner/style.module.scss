@@ -1,0 +1,46 @@
+.LoadingSpinner {
+	--spinner-size: 24px;
+
+	position: relative;
+	width: var(--spinner-size);
+	height: var(--spinner-size);
+
+	.Front {
+		position: absolute;
+		width: var(--spinner-size);
+		height: var(--spinner-size);
+		animation: loading-spinner 1s linear infinite;
+		opacity: 1;
+	}
+
+	// Size: Large
+	&._size_large {
+		--spinner-size: 48px;
+	}
+
+	// Size: Medium
+	&._size_medium {
+		--spinner-size: 32px;
+	}
+
+
+	// Animation Keyframes
+	@keyframes loading-spinner-reverse {
+		from {
+			transform: rotate(0deg)
+		}
+		to {
+			transform: rotate(-360deg)
+		}
+	}
+
+	@keyframes loading-spinner {
+		from {
+			transform: rotate(0deg)
+		}
+		to {
+			transform: rotate(360deg)
+		}
+	}
+
+} // .LoadingSpinner

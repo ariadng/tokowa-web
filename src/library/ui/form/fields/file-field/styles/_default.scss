@@ -1,0 +1,8 @@
+.FileField {
+	@apply relative;
+
+	input {
+		@apply absolute z-[-1];
+		@apply opacity-0;
+	}
+}

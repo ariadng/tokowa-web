@@ -1,0 +1,17 @@
+.Scrim {
+	@apply absolute top-0 left-0 z-[9000];
+	@apply w-[100svw] h-[100svh];
+	@apply bg-black/50 opacity-0;
+	transition: opacity 600ms var(--transition-easing);
+	
+	&.Active {
+		@apply opacity-100;
+		transition-duration: 300ms;
+	} // &.Active
+
+	&.Inactive {
+		@apply w-[0px] h-[0px] opacity-0;
+		transition-duration: 0ms;
+	} // &.Inactive
+
+} // .Scrim
