@@ -17,6 +17,21 @@ export default defineConfig({
 		VitePWA({
 			workbox: {
 				globPatterns: ["**/*"],
+				runtimeCaching: [
+					{
+						urlPattern: ({url}) => {
+							return true;
+						},
+						handler: "NetworkFirst" as const,
+						options: {
+							cacheName: "default",
+							cacheableResponse: {
+								statuses: [0, 200]
+							}
+						}
+
+					}
+				]
 			},
 			includeAssets: [
 				"**/*",
